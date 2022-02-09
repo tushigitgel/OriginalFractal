@@ -8,11 +8,17 @@ public void draw(){
 }
 public void myFractal(int x, int y, int siz){
   noFill();
-  strokeWeight(3);
+  strokeWeight(1);
   stroke((int)(Math.random()*200), (int)(Math.random()*200),(int)(Math.random()*200));
   rect(x, y, siz, siz);
   if(siz > 10){
     myFractal(x - siz/2, y - siz/2, siz/2);
     myFractal(x + siz/2, y + siz/2, siz/2);
+  }
+  strokeWeight(2);
+  ellipse(x, y, siz, siz);
+  if(siz > 10){
+    myFractal(x - siz/2, y + siz/2, siz/2);
+    myFractal(x + siz/2, y - siz/2, siz/2);
   }
 }
